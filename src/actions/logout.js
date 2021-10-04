@@ -1,8 +1,8 @@
-import LOGOUT from "./constants"
+import { LOGOUT } from './constants';
 
-const logoutAction = () => {
+const logoutAction = () => async (dispatch) => {
   dispatch({
     type: LOGOUT,
-  })
-}
-export default logoutAction
+  });
+};
+export default logoutAction;
