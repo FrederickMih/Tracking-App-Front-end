@@ -1,7 +1,12 @@
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import loginAction from '../../actions/login';
+import '../../styles/loginUser.css';
 
 const LoginUser = () => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -19,16 +24,34 @@ const LoginUser = () => {
   };
 
   return (
-    <div className="login-page">
-      <div className="container">
+    <div className="login__page">
+      <form className="login__form">
         <h1>Login Here</h1>
-        <input id="username" type="name" placeholder=" Your Name" />
-        <input id="email" type="email" placeholder="Email" />
-        <input id="password" type="password" placeholder="Password" />
+        <input
+          id="username"
+          type="username"
+          placeholder=" Your Name"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)} // to hold user input
+        />
+        <input
+          id="email"
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <button type="submit" onClick={handleClick}>
           Login
         </button>
-      </div>
+      </form>
     </div>
   );
 };
