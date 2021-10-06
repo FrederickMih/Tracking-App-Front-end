@@ -1,25 +1,17 @@
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
-import loginAction from '../../actions/login';
+import { loginAction } from '../../actions/index';
 import '../../styles/loginUser.css';
 
-const LoginUser = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Login = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
     const username = document.getElementById('username').value;
-    if (username !== '') {
-      dispatch(
-        loginAction({
-          username,
-          isLogIn: true,
-        })
-      );
+    const email = document.getElementById('email').value;
+    if (username && email !== '') {
+      dispatch(loginAction(username, email));
     } else {
-      alert('Username can not be empty');
+      alert('Username or Email CANNOT be empty please');
     }
   };
 
@@ -27,27 +19,8 @@ const LoginUser = () => {
     <div className="login__page">
       <form className="login__form">
         <h1>Login Here</h1>
-        <input
-          id="username"
-          type="username"
-          placeholder=" Your Name"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)} // to hold user input
-        />
-        <input
-          id="email"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          id="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <input id="username" type="username" placeholder="Username" />
+        <input id="email" type="email" placeholder="Email" />
         <button type="submit" className="submit__button" onClick={handleClick}>
           Login
         </button>
@@ -56,4 +29,4 @@ const LoginUser = () => {
   );
 };
 
-export default LoginUser;
+export default Login;

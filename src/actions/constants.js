@@ -1,3 +1,5 @@
-export const GET_MEASUREMENTS = 'GET_MEASUREMENTS';
-export const LOGIN = 'LOGIN';
-export const LOGOUT = 'LOGOUT';
+const GET_MEASUREMENTS = 'GET_MEASUREMENTS';
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+export { GET_MEASUREMENTS, LOGIN, LOGOUT };

@@ -7,7 +7,7 @@ const middleware = [thunk];
 const initialState = {};
 
 export const rootReducer = combineReducers({
-  authReducer,
+  user: authReducer,
 });
 
 const store = createStore(
