@@ -1,11 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginUser from '../presentation/LoginUser';
-import LogoutUser from '../presentation/LogoutUser';
+import { getMeasurements } from '../../actions';
+// import LogoutUser from '../presentation/LogoutUser';
 import '../../styles/App.css';
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getMeasurements());
+  }, [dispatch]);
   // Load user data from state
   const user = useSelector((state) => state.user);
 
