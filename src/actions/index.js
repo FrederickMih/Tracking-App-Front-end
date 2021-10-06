@@ -1,19 +1,14 @@
 import axios from 'axios';
 import { LOGIN, LOGOUT, GET_MEASUREMENTS } from './constants';
 
-const getMeasurements = () => async (dispatch) => {
+const getMeasurements = () => (dispatch) => {
   const req = 'https://aqueous-spire-81105.herokuapp.com/measurements';
-  axios.get(req).then(
-    // (response) => console.log(response.data)
-    (response) => {
-      dispatch({
-        type: GET_MEASUREMENTS,
-        payload: {
-          measurements: [...response.data],
-        },
-      });
-    }
-  );
+  axios.get(req)
+    .then((response) => dispatch({
+      type: GET_MEASUREMENTS,
+      payload: response.data,
+    }))
+    .catch((err) => err);
 };
 
 const loginAction = (username, email) => async (dispatch) => {
