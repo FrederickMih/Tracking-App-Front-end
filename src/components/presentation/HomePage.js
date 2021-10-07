@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import '../../styles/HomePage.css';
 
 const HomePage = ({ handleSlideToAddMeasurement }) => (
-  <div className="pageWraper">
+  <div className="main__div">
     <div className="homeContainer">
       <p className="homeText">
         Welcome back let&apos;s add your measurement for today.
