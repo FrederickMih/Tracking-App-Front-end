@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginUser from '../presentation/LoginUser';
 import { getMeasurements } from '../../actions';
 import Router from '../../router/Router';
-// import LogoutUser from '../presentation/LogoutUser';
+import LogoutUser from '../presentation/LogoutUser';
 import '../../styles/App.css';
 
 const App = () => {
