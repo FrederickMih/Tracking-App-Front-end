@@ -6,6 +6,7 @@ import addMeasureLogo from '../../assets/images/add-measure-logo.png';
 import trackLogo from '../../assets/images/track-logo.png';
 import progressLogo from '../../assets/images/progress-logo.png';
 import moreLogo from '../../assets/images/more.png';
+import '../../styles/Navigator.css';
 
 const Navigator = () => (
   <>
@@ -14,8 +15,7 @@ const Navigator = () => (
         to="/measurement"
         exact
         className="link"
-        activeClassName="activeLink"
-      >
+        activeClassName="activeLink">
         <img
           src={addMeasureLogo}
           className="linkImage"
