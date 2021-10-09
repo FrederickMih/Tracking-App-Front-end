@@ -12,7 +12,7 @@ import help from '../../assets/images/help.png';
 const MorePage = ({ userData }) => (
   <div>
     <Header title="More" />
-    <div className={container}>
+    <div className="container">
       <div className="user">
         <img alt="user" src={userData.avatar} />
         <div className="info">
