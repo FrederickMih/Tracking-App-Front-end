@@ -2,14 +2,15 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import LogoutUser from '../presentation/LogoutUser';
-import logoutImage from '../assets/images/logout.png';
-import backLogo from '../assets/images/back.png';
+import { logoutAction } from '../../actions';
+import logoutImage from '../../assets/images/logout.png';
+import backLogo from '../../assets/images/back.png';
+import '../../styles/Header.css';
 
-const Header = ({ title, logout, back }) => {
+const Header = ({ title, logoutAction, back }) => {
   const history = useHistory();
   const handleClick = () => {
-    logout();
+    logoutAction();
     localStorage.removeItem('token');
   };
 
@@ -18,31 +19,15 @@ const Header = ({ title, logout, back }) => {
   };
 
   return (
-    <div className={headline}>
-      {
-        back && (
-          <button
-            className={backButton}
-            type="button"
-            onClick={returnBack}
-          >
-            <img
-              src={backLogo}
-              alt="back sign"
-            />
-          </button>
-        )
-      }
+    <div className="headline">
+      {back && (
+        <button className="backButton" type="button" onClick={returnBack}>
+          <img src={backLogo} alt="back sign" />
+        </button>
+      )}
       {title}
-      <button
-        className={logoutBtn}
-        type="button"
-        onClick={handleClick}
-      >
-        <img
-          src={logoutImage}
-          alt="log out button"
-        />
+      <button className="logoutBtn" type="button" onClick={handleClick}>
+        <img src={logoutImage} alt="log out button" />
       </button>
     </div>
   );
@@ -50,7 +35,7 @@ const Header = ({ title, logout, back }) => {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
-  logout: PropTypes.func.isRequired,
+  logoutAction: PropTypes.func.isRequired,
   back: PropTypes.bool,
 };
 
@@ -59,7 +44,7 @@ Header.defaultProps = {
 };
 
 const mapDispatchToProps = {
-  logout,
+  logoutAction,
 };
 
 export default connect(null, mapDispatchToProps)(Header);
