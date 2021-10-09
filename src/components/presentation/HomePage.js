@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useRef, useState } from 'react';
 import '../../styles/HomePage.css';
 
@@ -31,8 +31,8 @@ const HomePage = () => {
   );
 };
 
-HomePage.propTypes = {
-  handleToAddMeasures: PropTypes.func.isRequired,
-};
+// HomePage.propTypes = {
+//   handleToAddMeasures: PropTypes.func.isRequired,
+// };
 
 export default HomePage;

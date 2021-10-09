@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginUser from '../presentation/LoginUser';
 import { getMeasurements } from '../../actions';
 import Router from '../../router/Router';
-import LogoutUser from '../presentation/LogoutUser';
+import Header from './Header';
+// import LogoutUser from '../presentation/LogoutUser';
 import '../../styles/App.css';
 
 const App = () => {
@@ -16,9 +17,17 @@ const App = () => {
   // Load user data from state
   const user = useSelector((state) => state.user);
 
-  return (
-    <div>{user.loggedIn ? <LogoutUser /> && <Router /> : <LoginUser />}</div>
-  );
+  let app = <LoginUser />;
+  if (user.loggedIn) {
+    app = (
+      <>
+        <Header />
+        <Router />
+      </>
+    );
+  }
+
+  return <div className="App">{app}</div>;
 };
 
 export default App;
