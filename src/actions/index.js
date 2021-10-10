@@ -1,16 +1,16 @@
 import axios from 'axios';
-import { LOGIN, LOGOUT, GET_MEASUREMENTS, SET_USER_DATA } from './constants';
+import {
+  LOGIN, LOGOUT, GET_MEASUREMENTS, SET_USER_DATA
+} from './constants';
 
 const getMeasurements = () => (dispatch) => {
   const req = 'https://aqueous-spire-81105.herokuapp.com/measurements';
   axios
     .get(req)
-    .then((response) =>
-      dispatch({
-        type: GET_MEASUREMENTS,
-        payload: response.data,
-      })
-    )
+    .then((response) => dispatch({
+      type: GET_MEASUREMENTS,
+      payload: response.data,
+    }))
     .catch((err) => err);
 };
 
@@ -34,8 +34,9 @@ const logoutAction = () => async (dispatch) => {
 const setUserData = () => async (dispatch) => {
   dispatch({
     type: SET_USER_DATA,
-    data,
   });
 };
 
-export { loginAction, logoutAction, getMeasurements, setUserData };
+export {
+  loginAction, logoutAction, getMeasurements, setUserData
+};

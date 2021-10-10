@@ -15,7 +15,8 @@ const Navigator = () => (
         to="/measurement"
         exact
         className="link"
-        activeClassName="activeLink">
+        activeClassName="activeLink"
+      >
         <img
           src={addMeasureLogo}
           className="linkImage"
