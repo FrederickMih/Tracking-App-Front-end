@@ -3,15 +3,16 @@ import {
   LOGIN, LOGOUT, GET_MEASUREMENTS, SET_USER_DATA
 } from './constants';
 
-const getMeasurements = () => (dispatch) => {
-  const req = 'https://aqueous-spire-81105.herokuapp.com/measurements';
-  axios
-    .get(req)
-    .then((response) => dispatch({
+const getMeasurements = () => async (dispatch) => {
+  axios.get('https://aqueous-spire-81105.herokuapp.com/measurements').then(
+    // (response) => console.log(response.data)
+    (response) => dispatch({
       type: GET_MEASUREMENTS,
-      payload: response.data,
-    }))
-    .catch((err) => err);
+      payload: {
+        measurements: [...response.data],
+      },
+    })
+  );
 };
 
 const loginAction = (username, email) => async (dispatch) => {

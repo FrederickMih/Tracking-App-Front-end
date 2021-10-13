@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import Header from './Header';
+import Header from './Header';
 import target from '../../assets/images/target.png';
 import email from '../../assets/images/email.png';
 import man from '../../assets/images/man.png';
@@ -11,7 +11,7 @@ import { user, info, link } from '../../styles/MorePage.module.css';
 
 const MorePage = ({ userData }) => (
   <div>
-    {/* <Header title="More" /> */}
+    <Header title="More" />
     <div className={container}>
       <div className={user}>
         <img alt="Img" src={man} />
