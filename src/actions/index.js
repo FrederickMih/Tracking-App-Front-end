@@ -4,7 +4,7 @@ import {
 } from './constants';
 
 const getMeasurements = () => async (dispatch) => {
-  axios.get('https://aqueous-spire-81105.herokuapp.com/measurements').then(
+  axios.get('https://guarded-sands-43543.herokuapp.com/measurements').then(
     // (response) => console.log(response.data)
     (response) => dispatch({
       type: GET_MEASUREMENTS,

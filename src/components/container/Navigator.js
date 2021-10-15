@@ -28,7 +28,7 @@ const Navigator = () => (
         <img src={trackLogo} className="linkImage" alt="add Measure logo" />
         <span className="linkTitle">Track.it</span>
       </NavLink>
-      <NavLink to="/progress" className="link" activeClassName="activeLink">
+      <NavLink to="/progress/1" className="link" activeClassName="activeLink">
         <img src={progressLogo} className="linkImage" alt="add Measure logo" />
         <span className="linkTitle">Progress</span>
       </NavLink>

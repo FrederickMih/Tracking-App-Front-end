@@ -11,7 +11,7 @@ const Measurements = () => {
         <MeasurementItem
           key={measurement.id}
           id={measurement.id}
-          image={measurement.image}
+          image={measurement.image_url}
           name={measurement.name}
         />
       ))}

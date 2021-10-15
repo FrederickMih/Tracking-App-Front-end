@@ -15,7 +15,7 @@ const Progress = () => {
   useEffect(() => {
     axios
       .get(
-        `https://aqueous-spire-81105.herokuapp.com/measurements/${measurementId}`
+        `https://guarded-sands-43543.herokuapp.com/measurements/${measurementId}`
       )
       .then((response) => {
         setMeasures(sortObjByDate(response.data.measures));
@@ -36,7 +36,7 @@ const Progress = () => {
         <ProgressItem
           key={measure.id}
           date={measure.created_at}
-          data={measure.data}
+          data={measure.value}
         />
       ))}
     </div>

@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import Header from '../container/Header';
+// import Header from '../container/Header';
 
 const AddMeasure = () => {
-  <Header title="Add Measurement" />;
+  // <Header title="Add Measurement" />;
 
   const history = useHistory();
   const [measurementId, setMeasurementId] = useState({
     id: 1,
   });
 
-  const [measureData, setMeasureData] = useState({
-    data: 0.01,
+  const [measureValue, setMeasureValue] = useState({
+    value: 0.01,
   });
 
   const measurements = useSelector((state) => state.measurements.measurements);
@@ -25,8 +25,8 @@ const AddMeasure = () => {
   };
 
   const handleInputChange = (e) => {
-    setMeasureData({
-      data: e.target.value,
+    setMeasureValue({
+      value: e.target.value,
     });
   };
 
@@ -37,11 +37,11 @@ const AddMeasure = () => {
         id: measurementId.id,
       },
       measure: {
-        data: measureData.data,
+        value: measureValue.value,
       },
     };
     axios
-      .post('https://aqueous-spire-81105.herokuapp.com/measurements', payload)
+      .post('https://guarded-sands-43543.herokuapp.com/measurements', payload)
       .then(() => {
         document.getElementById('measurement-input').value = '';
         history.push(`/progress/${measurementId.id}`);
