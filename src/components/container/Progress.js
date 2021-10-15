@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ProgressItem from '../presentation/ProgressItem';
+import Header from './Header';
 
 function sortObjByDate(array) {
   return array.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
@@ -26,6 +27,7 @@ const Progress = () => {
 
   return (
     <div className="progress-container">
+      <Header title="Progress Report" />
       <h3>
         Your
         {measureName}
