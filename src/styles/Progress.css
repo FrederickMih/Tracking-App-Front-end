@@ -3,7 +3,7 @@
   overflow: auto;
 }
 
-.progress__container {
+.progress__container h2 {
   text-align: center;
   padding-top: 1rem;
 }

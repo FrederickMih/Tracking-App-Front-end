@@ -30,12 +30,12 @@ const Progress = () => {
     <div>
       <Header title="Progress Report" />
       <div className="progress__container">
-        <h3>
-          Your
+        <h2>
+          Your &nbsp;
           {measureName}
           {' '}
           Progress
-        </h3>
+        </h2>
         {measures.map((measure) => (
           <ProgressItem
             key={measure.id}
