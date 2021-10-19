@@ -9,7 +9,11 @@ const formatDate = (string) => {
 const ProgressItem = ({ date, data }) => (
   <div className="progress__item">
     <p className="date">{formatDate(date)}</p>
-    <p className="data">{data} cm</p>
+    <p className="data">
+      {data}
+      {' '}
+      cm
+    </p>
   </div>
 );
 
