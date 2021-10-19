@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../../styles/ProgressItem.css';
 
 const formatDate = (string) => {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -6,13 +7,9 @@ const formatDate = (string) => {
 };
 
 const ProgressItem = ({ date, data }) => (
-  <div className="progress-item">
+  <div className="progress__item">
     <p className="date">{formatDate(date)}</p>
-    <p className="data">
-      {data}
-      {' '}
-      cm
-    </p>
+    <p className="data">{data} cm</p>
   </div>
 );
 
