@@ -13,7 +13,7 @@ const Router = () => (
       <Route exact path="/measurement" component={HomePage} />
       <Route exact path="/add" component={AddMeasure} />
       <Route exact path="/more" component={MorePage} />
-      <Route exact path="/tracker" component={Measurements} />
+      <Route exact path="/track" component={Measurements} />
       <Route path="/progress/:measurementId" component={Progress} />
     </Switch>
     <Navigator />

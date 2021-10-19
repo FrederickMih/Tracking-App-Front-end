@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import '../../styles/MeasurementItem.css';
 // import Header from '../container/Header';
 
-const MeasurementItem = ({ id, image, name }) => (
+const MeasurementItem = ({ id, name }) => (
   <div>
     {/* <Header title="Track.it" /> */}
     <Link to={`/progress/${id}`} className="measurement__item">
-      <img alt="Measurement Item" src={image} />
       <div>
         <p className="name">{name}</p>
       </div>
@@ -17,7 +16,6 @@ const MeasurementItem = ({ id, image, name }) => (
 
 MeasurementItem.propTypes = {
   id: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
 
