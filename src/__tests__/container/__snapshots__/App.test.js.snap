@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the App component snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="login__page"
+    >
+      <form
+        class="login__form"
+      >
+        <h1>
+          Login Here
+        </h1>
+        <input
+          id="username"
+          placeholder="Username"
+          type="username"
+        />
+        <input
+          id="email"
+          placeholder="Email"
+          type="email"
+        />
+        <button
+          class="submit__button"
+          type="submit"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
