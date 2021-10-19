@@ -7,7 +7,7 @@ const Measurements = () => {
   const measurements = useSelector((state) => state.measurements.measurements);
 
   return (
-    <div className="measures">
+    <div className="measurements">
       {measurements.map((measurement) => (
         <MeasurementItem
           key={measurement.id}

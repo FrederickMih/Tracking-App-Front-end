@@ -1,0 +1,9 @@
+.measurement__item {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: white;
+}
