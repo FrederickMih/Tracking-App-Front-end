@@ -7,7 +7,7 @@ import MeasurementItem from '../../components/presentation/MeasurementItem';
 
 afterEach(cleanup);
 
-it('displays MeasurementItem', () => {
+it('should displays MeasurementItem', () => {
   render(
     <Provider store={store}>
       <BrowserRouter>
