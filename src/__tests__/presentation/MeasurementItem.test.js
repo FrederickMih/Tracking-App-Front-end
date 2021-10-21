@@ -7,7 +7,6 @@ import MeasurementItem from '../../components/presentation/MeasurementItem';
 
 afterEach(cleanup);
 
-
 it('should displays MeasurementItem', () => {
   render(
     <Provider store={store}>
@@ -18,5 +17,3 @@ it('should displays MeasurementItem', () => {
   );
   expect(screen.getByText('TestMeasurementItem')).toBeTruthy();
 });
-
-
