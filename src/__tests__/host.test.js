@@ -16,4 +16,11 @@ describe('Host', () => {
 
     expect(data).toBeInstanceOf(Object);
   });
+
+  it('should test if Measurements data is received', async () => {
+    const data = await axios
+      .get('https://guarded-sands-43543.herokuapp.com/measurements')
+      .then((res) => res);
+    expect(data).toBeInstanceOf(Object);
+  });
 });
