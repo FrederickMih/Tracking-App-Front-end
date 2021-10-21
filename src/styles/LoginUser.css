@@ -40,3 +40,9 @@
   font-family: 'Inter';
   border-radius: 15px;
 }
+
+@media (min-width: 767px) {
+  .login__page {
+    width: 50%;
+  }
+}

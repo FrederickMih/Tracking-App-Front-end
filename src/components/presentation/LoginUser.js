@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { loginAction } from '../../actions/index';
-import '../../styles/loginUser.css';
+import '../../styles/LoginUser.css';
 
 const Login = () => {
   const dispatch = useDispatch();
