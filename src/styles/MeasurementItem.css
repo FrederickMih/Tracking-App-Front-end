@@ -3,17 +3,18 @@
   border-bottom: 1px solid #c9ab81;
   justify-content: left;
   text-decoration: none;
-  align-items: left;
+
+  /* align-items: left; */
   padding: 1rem;
   margin: 0.5rem;
   background-color: white;
-
   width: 100%;
   margin-top: 1.5rem;
   padding-bottom: 1.5rem;
   font-size: 1rem;
   position: relative;
 }
+
 .measurement__item:hover {
   scale: 1;
   outline: solid 0.1rem var(--main);

@@ -64,7 +64,8 @@ body {
 .date-selector i:hover {
   cursor: pointer;
 }
-/* 
+
+/*
 @media (min-width: 767px) {
   .media__login {
     width: 50%;

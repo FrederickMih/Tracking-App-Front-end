@@ -7,7 +7,7 @@ Here is the back-end repository ([API Repo](https://github.com/FrederickMih/Trac
 
 ## Screenshots
 
-<span style="display:block;text-align:center">![screenshots](src/assets/Screenshot1.png) ![](src/assets/Screenshot2.png)
+<span style="display: block; text-align: center;">![screenshots](src/assets/Screenshot1.png) ![](src/assets/Screenshot2.png)
 </span>
 
 ### Features
