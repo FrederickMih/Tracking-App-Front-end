@@ -30,7 +30,7 @@ Here is the back-end repository ([API Repo](https://github.com/FrederickMih/Trac
 
 ## Live Demo
 
-[Try it out here]()
+[Try it out here](https://fred-tracking-app.herokuapp.com/measurement)
 
 ## Set up this project locally
 
