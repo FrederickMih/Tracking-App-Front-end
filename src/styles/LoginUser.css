@@ -19,7 +19,7 @@
 }
 
 .login__form > input {
-  min-width: 380px;
+  min-width: 300px;
   padding: 20px 0;
   padding-left: 15px;
   margin-bottom: 10px;
@@ -39,9 +39,8 @@
   border-radius: 15px;
 }
 
-/*
-@media (min-width: 767px) {
+@media (min-width: 992px) {
   .login__page {
-    width: 50%;
+    min-width: 380px;
   }
-} */
+}
