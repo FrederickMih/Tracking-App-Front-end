@@ -26,9 +26,6 @@
   flex-direction: row;
 }
 
-/* select, */
-
-/* input, */
 .AddMeasure__btn {
   font-size: 14px;
   letter-spacing: 2px;
@@ -44,8 +41,6 @@
   width: max-content;
   cursor: pointer;
   transition: all 0.3s 0s ease-in-out;
-
-  /* margin: 4.5rem 4.5rem; */
 }
 
 .AddMeasure__btn:hover {
@@ -53,12 +48,6 @@
   background-color: rgb(10, 209, 216);
   text-decoration: none;
 }
-
-/* select {
-  padding: 0.25rem;
-  width: 50%;
-} */
-
 .add-measure input {
   padding: 0.25rem;
   width: 50%;
@@ -92,11 +81,3 @@ select {
     width: 36%;
   }
 }
-
-/* Medium devices (tablets, 768px and up) */
-
-/* @media (min-width: 767px) {
-  .AddMeasure__btn {
-    width: 62.5%;
-  }
-} */
