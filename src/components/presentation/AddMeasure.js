@@ -56,7 +56,8 @@ const AddMeasure = () => {
             <select
               name="select-measurements"
               id="select-measurements"
-              onChange={handleSelectChange}>
+              onChange={handleSelectChange}
+            >
               {measurements.map((measurement) => (
                 <option key={measurement.id} value={measurement.id}>
                   {measurement.name}
@@ -75,7 +76,8 @@ const AddMeasure = () => {
           <button
             className="AddMeasure__btn"
             type="submit"
-            onClick={handleClick}>
+            onClick={handleClick}
+          >
             Add Measure
           </button>
         </div>
