@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { BrowserRouter, Link, Redirect } from 'react-router-dom';
-import { signUpUser } from '../../actions/userAction';
+import { Link, Redirect } from 'react-router-dom';
+import { signUpUser, signUpUserFailure } from '../../actions/userAction';
 
 const SignUpForm = (props) => {
-  const { handleSignUpUser, error, loggedIn } = props;
+  const {
+    handleSignUpUser, error, loggedIn, signupError, resetError
+  } = props;
 
   if (loggedIn) {
     return <Redirect to="/measurement" />;
   }
+
+  useEffect(() => {
+    if (signupError !== '') {
+      setTimeout(() => {
+        resetError('');
+      }, 5000);
+    }
+  }, [signupError]);
 
   const [email, setEmail] = useState('');
   const [userName, setUserName] = useState('');
@@ -40,17 +50,19 @@ const SignUpForm = (props) => {
       password_confirmation: passwordConfirm,
     };
     e.preventDefault();
+    handleSignUpUser(data);
     setEmail('');
     setUserName('');
     setPassword('');
     setPasswordConfirm('');
-    handleSignUpUser(data);
   };
 
   return (
     <div className="container w-75 d-flex flex-column justify-content-center align-items-left">
       <p className="row justify-content-center text-danger">
-        {error !== '' && <span className="d-block m-auto">{error}</span>}
+        {signupError !== '' && (
+          <span className="d-block m-auto">{signupError}</span>
+        )}
       </p>
 
       <form
@@ -119,11 +131,9 @@ const SignUpForm = (props) => {
       <p className="">
         <span className="inline-block">Already have an account ? </span>
         <span className="inline-block">
-          <BrowserRouter>
-            <Link to="/login" style={{ textDecoration: 'none' }}>
-              log in
-            </Link>
-          </BrowserRouter>
+          <Link to="/login" style={{ textDecoration: 'none' }}>
+            log in
+          </Link>
         </span>
       </p>
     </div>

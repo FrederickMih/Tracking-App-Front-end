@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter, Link, Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logInUser } from '../../actions/userAction';
 
@@ -68,11 +68,9 @@ const LogInForm = (props) => {
         </button>
       </form>
       <p className="align-self-start">
-        <BrowserRouter>
-          <Link to="/signup" style={{ textDecoration: 'none' }}>
-            Create Account
-          </Link>
-        </BrowserRouter>
+        <Link to="/signup" style={{ textDecoration: 'none' }}>
+          Create Account
+        </Link>
       </p>
     </div>
   );

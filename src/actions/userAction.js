@@ -1,11 +1,12 @@
-import axios from 'axios';
 import {
+  BASE,
   LOGIN_USER,
   SIGN_UP_USER,
-  USER_REQUEST_FAILURE,
+  LOGIN_USER_FAILURE,
+  SIGNUP_USER_FAILURE,
   LOGOUT_USER,
   LOGIN_USER_SESSION,
-} from './constants';
+} from '../constants';
 
 const signUpUserRequest = (response) => ({
   type: SIGN_UP_USER,
@@ -21,38 +22,61 @@ const logInUserSession = () => ({
   type: LOGIN_USER_SESSION,
 });
 
-const userRequestFailure = (error) => ({
-  type: USER_REQUEST_FAILURE,
-  payload: error,
-});
-
-const signUpUser = (user) => async (dispatch) => {
-  // const url = 'http://localhost:3001/signup/';
-
-  const url = 'https://guarded-sands-43543.herokuapp.com/signup/';
-  try {
-    const response = await axios.post(url, user);
-    dispatch(signUpUserRequest(response.data));
-  } catch (error) {
-    dispatch(userRequestFailure(error.message));
-  }
-};
-
-const logInUser = (details) => async (dispatch) => {
-  // const url = 'http://localhost:3001/auth/login';
-  const url = 'https://guarded-sands-43543.herokuapp.com/auth/login';
-  try {
-    const response = await axios.post(url, details);
-    dispatch(logInUserRequest(response.data));
-  } catch (error) {
-    dispatch(userRequestFailure(error.message));
-  }
-};
-
 const logOutUser = () => ({
   type: LOGOUT_USER,
 });
 
+const loginUserFailure = (error) => ({
+  type: LOGIN_USER_FAILURE,
+  payload: error,
+});
+
+const signUpUserFailure = (error) => ({
+  type: SIGNUP_USER_FAILURE,
+  payload: error,
+});
+
+const signUpUser = (user) => async (dispatch) => {
+  const url = `${BASE}signup/`;
+
+  try {
+    const server = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user }),
+    });
+    const response = await server.json();
+    dispatch(signUpUserRequest(response));
+  } catch (error) {
+    dispatch(signUpUserFailure(error));
+  }
+};
+
+const logInUser = (details) => async (dispatch) => {
+  const url = `${BASE}auth/login`;
+
+  try {
+    const server = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(details),
+    });
+    const response = await server.json();
+    dispatch(logInUserRequest(response));
+  } catch (error) {
+    dispatch(loginUserFailure(error.message));
+  }
+};
+
 export {
-  signUpUser, logInUser, logOutUser, logInUserSession
+  signUpUser,
+  logInUser,
+  logOutUser,
+  logInUserSession,
+  loginUserFailure,
+  signUpUserFailure,
 };

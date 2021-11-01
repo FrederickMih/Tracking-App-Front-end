@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogInUser from '../presentation/LogInForm';
 // import SignUpUser from '../presentation/SignUpForm';
@@ -44,7 +45,11 @@ const App = (props) => {
     );
   }
 
-  return <div className="App">{app}</div>;
+  return (
+    <BrowserRouter>
+      <div className="App">{app}</div>
+    </BrowserRouter>
+  );
 };
 
 const mapStateToProps = (state) => ({
