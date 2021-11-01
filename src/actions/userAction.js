@@ -53,4 +53,6 @@ const logOutUser = () => ({
   type: LOGOUT_USER,
 });
 
-export { signUpUser, logInUser, logOutUser, logInUserSession };
+export {
+  signUpUser, logInUser, logOutUser, logInUserSession
+};

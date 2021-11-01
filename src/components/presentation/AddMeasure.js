@@ -41,7 +41,8 @@ const AddMeasure = () => {
     };
     axios
       .post('https://guarded-sands-43543.herokuapp.com/measurements', payload)
-      .then(() => {
+      .then((response) => {
+        console.log(response);
         document.getElementById('measurement-input').value = '';
         history.push(`/progress/${measurementId.id}`);
       });

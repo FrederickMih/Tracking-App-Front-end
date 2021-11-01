@@ -2,16 +2,16 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { logoutAction } from '../../actions';
+import { logOutUser } from '../../actions/userAction';
 import logoutImage from '../../assets/images/logout.png';
 import backLogo from '../../assets/images/back.png';
 import '../../styles/Header.css';
 
-const Header = ({ title, logoutAction, back }) => {
+const Header = ({ title, logOutUser, back }) => {
   // const username = useSelector((state) => state.user.username);
   const history = useHistory();
   const handleClick = () => {
-    logoutAction();
+    logOutUser();
     localStorage.removeItem('token');
   };
 
@@ -38,7 +38,7 @@ const Header = ({ title, logoutAction, back }) => {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
-  logoutAction: PropTypes.func.isRequired,
+  logOutUser: PropTypes.func.isRequired,
   back: PropTypes.bool,
 };
 
@@ -47,7 +47,7 @@ Header.defaultProps = {
 };
 
 const mapDispatchToProps = {
-  logoutAction,
+  logOutUser,
 };
 
 export default connect(null, mapDispatchToProps)(Header);

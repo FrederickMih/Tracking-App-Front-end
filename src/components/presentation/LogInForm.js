@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link, Redirect } from 'react-router-dom';
+import { BrowserRouter, Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logInUser } from '../../actions/userAction';
 
@@ -8,7 +8,7 @@ const LogInForm = (props) => {
   const { handleLogIn, error, loggedIn } = props;
 
   if (loggedIn) {
-    return <Redirect to="/" />;
+    return <Redirect to="/measurement" />;
   }
 
   const [userName, setUserName] = useState('');
@@ -37,7 +37,8 @@ const LogInForm = (props) => {
 
       <form
         className=" d-flex flex-column align-items-start col-sm-8 col-md-6"
-        onSubmit={handleFormSubmit}>
+        onSubmit={handleFormSubmit}
+      >
         <div className="form-group my-3">
           <label htmlFor="formGroupExampleInput2">
             UserName
@@ -67,9 +68,11 @@ const LogInForm = (props) => {
         </button>
       </form>
       <p className="align-self-start">
-        <Link to="/sign_up" style={{ textDecoration: 'none' }}>
-          Create Account
-        </Link>
+        <BrowserRouter>
+          <Link to="/signup" style={{ textDecoration: 'none' }}>
+            Create Account
+          </Link>
+        </BrowserRouter>
       </p>
     </div>
   );

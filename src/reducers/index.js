@@ -11,7 +11,7 @@ const initialState = {};
 
 export const rootReducer = combineReducers({
   // user: authReducer,
-  user: userReducer,
+  userReducer,
   measurements: measurementsReducer,
   userData,
 });

@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { BrowserRouter, Link, Redirect } from 'react-router-dom';
 import { signUpUser } from '../../actions/userAction';
 
 const SignUpForm = (props) => {
   const { handleSignUpUser, error, loggedIn } = props;
 
   if (loggedIn) {
-    return <Redirect to="/" />;
+    return <Redirect to="/measurement" />;
   }
 
-  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
 
   const handleUserNameChange = (e) => {
@@ -34,13 +34,13 @@ const SignUpForm = (props) => {
 
   const handleFormSubmit = (e) => {
     const data = {
-      name,
+      email,
       username: userName,
       password,
       password_confirmation: passwordConfirm,
     };
     e.preventDefault();
-    setName('');
+    setEmail('');
     setUserName('');
     setPassword('');
     setPasswordConfirm('');
@@ -55,21 +55,8 @@ const SignUpForm = (props) => {
 
       <form
         className=" d-flex flex-column align-items-start col-sm-8 col-md-6"
-        onSubmit={handleFormSubmit}>
-        <div className="form-group my-3">
-          <label htmlFor="name">
-            Name
-            <input
-              type="text"
-              id="name"
-              value={name}
-              className="form-control"
-              placeholder="...name"
-              onChange={handleNameChange}
-              required
-            />
-          </label>
-        </div>
+        onSubmit={handleFormSubmit}
+      >
         <div className="form-group my-3">
           <label htmlFor="formGroupExampleInput2">
             User Name
@@ -79,6 +66,21 @@ const SignUpForm = (props) => {
               className="form-control"
               placeholder="@username"
               onChange={handleUserNameChange}
+              required
+            />
+          </label>
+        </div>
+
+        <div className="form-group my-3">
+          <label htmlFor="email">
+            Email
+            <input
+              type="text"
+              id="email"
+              value={email}
+              className="form-control"
+              placeholder="...email"
+              onChange={handleEmailChange}
               required
             />
           </label>
@@ -117,9 +119,11 @@ const SignUpForm = (props) => {
       <p className="">
         <span className="inline-block">Already have an account ? </span>
         <span className="inline-block">
-          <Link to="/log_in" style={{ textDecoration: 'none' }}>
-            log in
-          </Link>
+          <BrowserRouter>
+            <Link to="/login" style={{ textDecoration: 'none' }}>
+              log in
+            </Link>
+          </BrowserRouter>
         </span>
       </p>
     </div>
