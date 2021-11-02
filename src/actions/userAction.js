@@ -6,7 +6,7 @@ import {
   SIGNUP_USER_FAILURE,
   LOGOUT_USER,
   LOGIN_USER_SESSION,
-} from '../constants';
+} from './constants';
 
 const signUpUserRequest = (response) => ({
   type: SIGN_UP_USER,

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logInUser } from '../../actions/userAction';
+import { logInUser, loginUserFailure } from '../../actions/userAction';
 
 const LogInForm = (props) => {
-  const { handleLogIn, error, loggedIn } = props;
+  const { handleLogIn, loginError, loggedIn, resetError } = props;
 
   if (loggedIn) {
     return <Redirect to="/measurement" />;
@@ -21,6 +21,14 @@ const LogInForm = (props) => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
+
+  useEffect(() => {
+    if (loginError !== ''){
+      setTimeout(() => {
+        resetError('');
+      }, 5000);
+    }
+  }, [loginError]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
