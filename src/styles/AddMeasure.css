@@ -1,85 +1,17 @@
 .add-measure {
-  height: 72%;
-  min-width: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-top: 3em;
+  height: calc(100vh - 7em);
 }
 
-.container {
+.react-select .react-select__control {
+  border: none;
+}
+
+.add-measure form > * + * {
+  margin: 1em auto;
   width: 90%;
-  background: white;
-  padding: 2rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.container h1 {
-  color: #575757;
-  text-shadow: 0.2rem 0.2rem 0.5rem var(--main);
-}
-
-.select-wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.AddMeasure__btn {
-  font-size: 14px;
-  letter-spacing: 2px;
-  font-weight: 400 !important;
-  background-color: teal;
-  color: #fff;
-  padding: 23px 50px;
-  margin-top: 2rem;
-  text-align: center;
-  display: inline-block !important;
-  text-decoration: none;
-  border-radius: 2rem;
-  width: max-content;
-  cursor: pointer;
-  transition: all 0.3s 0s ease-in-out;
-}
-
-.AddMeasure__btn:hover {
-  transform: scale(1.04, 1);
-  background-color: rgb(10, 209, 216);
-  text-decoration: none;
-}
-
-.add-measure input {
-  padding: 0.25rem;
-  width: 50%;
-}
-
-select::-ms-expand {
-  display: none;
-}
-
-select {
-  width: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 2rem;
-  border: 1px solid #eee;
-  font: inherit;
-  line-height: inherit;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  background-repeat: no-repeat;
-  background-image:
-    linear-gradient(45deg, transparent 50%, currentColor 50%),
-    linear-gradient(135deg, currentColor 50%, transparent 50%);
-  background-position: right 15px top 1em, right 10px top 1em;
-  background-size: 5px 5px, 5px 5px;
-}
-
-@media (min-width: 992px) {
-  .AddMeasure__btn {
-    width: 36%;
-  }
+.red-text {
+  color: red;
 }

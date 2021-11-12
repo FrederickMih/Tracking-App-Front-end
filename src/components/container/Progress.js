@@ -1,50 +1,63 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import ProgressItem from '../presentation/ProgressItem';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import Header from './Header';
+import {
+  getMeasuresStatus,
+  getProgressReport,
+  getTotalData,
+  loadMeasures,
+} from '../../Redux/slicers/measure';
+import ProgressCircle from '../utility/ProgressCircle';
+import { TARGET } from '../../useful-info/constants'
 import '../../styles/Progress.css';
 
-function sortObjByDate(array) {
-  return array.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-}
-
 const Progress = () => {
-  const { measurementId } = useParams();
-  const [measures, setMeasures] = useState([]);
-  const [measureName, setMeasureName] = useState([]);
+  const title = 'Progress Report';
+  const dispatch = useDispatch();
+  const totalData = useSelector(getTotalData);
+  const progressReport = useSelector(getProgressReport);
+  const progressPercent = (totalData / TARGET) * 100;
+  const measures = useSelector(getMeasuresStatus);
 
-  useEffect(() => {
-    axios
-      .get(
-        `https://guarded-sands-43543.herokuapp.com/measurements/${measurementId}`
-      )
-      .then((response) => {
-        setMeasures(sortObjByDate(response.data.measures));
-        setMeasureName(response.data.name);
-      })
-      .catch((err) => err);
+  useEffect(async () => {
+    await dispatch(loadMeasures());
   }, []);
 
+  if (measures.status === 401) {
+    return <Redirect to="/home" />;
+  }
+
   return (
-    <div>
-      <Header title="Progress Report" />
-      <div className="progress__container">
-        <h2>
-          Your &nbsp;
-          {measureName}
-          {' '}
-          Progress
-        </h2>
-        {measures.map((measure) => (
-          <ProgressItem
-            key={measure.id}
-            date={measure.created_at}
-            data={measure.value}
+    <>
+      <Header title={title} />
+      <div className="progress-stats">
+        <div>
+          <ProgressCircle value={progressPercent} color="primary" />
+          <div className="progress-stats-label">Achieved</div>
+        </div>
+        <div>
+          <ProgressCircle
+            value={100 - progressPercent}
+            color={progressPercent >= 100 ? 'primary' : 'secondary'}
           />
+          <div className="progress-stats-label">Lag</div>
+        </div>
+      </div>
+      <div className="progress-items">
+        {Object.entries(progressReport).map((p) => (
+          <div key={p[0]} className="progress-item">
+            <div className="ins-type">{p[0]}</div>
+            <div className="ins-premium">
+              &#8377; {p[1].map((e) => e.premium).reduce((a, b) => a + b)}
+            </div>
+            <div className="ins-count">
+              Quantity: <span>{p[1].length}</span>
+            </div>
+          </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

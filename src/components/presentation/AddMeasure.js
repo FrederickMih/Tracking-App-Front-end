@@ -1,93 +1,87 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Select from 'react-select';
+import { Redirect } from 'react-router-dom';
 import Header from '../container/Header';
+import { getMeasurements, loadMeasurements } from '../../Redux/slicers/measurement';
+import { createMeasure } from '../../Redux/slicers/measure';
 import '../../styles/AddMeasure.css';
-// import T_HEADER from '../../helper/tHeader';
 
 const AddMeasure = () => {
-  const history = useHistory();
-  const [measurementId, setMeasurementId] = useState({
-    id: 1,
-  });
+  const appBarTitle = 'Add Measure';
+  const dispatch = useDispatch();
+  const measurementsObj = useSelector(getMeasurements);
+  const productsArray =
+    measurementsObj.measurements === undefined ? [] : measurementsObj.measurements;
 
-  const [measureValue, setMeasureValue] = useState({
-    value: 0.01,
-  });
+  const [measurementId, setMeasurementId] = useState(0);
+  const [data, setData] = useState('');
 
-  const measurements = useSelector((state) => state.measurements.measurements);
+  const [selectPlaceholderText, setSelectPlaceholderText] =
+    useState('Select your measurement item');
+  const [selectPlaceholderClass, setSelectPlaceholderClass] = useState('');
 
-  const handleSelectChange = (e) => {
-    setMeasurementId({
-      id: e.target.value,
-    });
+  useEffect(async () => {
+    await dispatch(loadMeasurements());
+  }, []);
+
+  if (measurementsObj.status === 401) {
+    return <Redirect to="/home" />;
+  }
+
+  const resetForm = () => {
+    setMeasurementId(0);
+    setData('');
   };
 
-  const handleInputChange = (e) => {
-    setMeasureValue({
-      value: e.target.value,
-    });
-  };
-
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = {
-      measurement: {
-        id: measurementId.id,
-      },
-      measure: {
-        value: measureValue.value,
-      },
-    };
-    axios
-      .post(
-        'https://guarded-sands-43543.herokuapp.com/measurements/',
-        payload
-      )
-      .then((response) => {
-        console.log(response);
-        document.getElementById('measurement-input').value = '';
-        history.push(`/progress/${measurementId.id}`);
-      });
+    if (measurementId === 0) {
+      setSelectPlaceholderText('Please select a Product');
+      setSelectPlaceholderClass('red-text');
+    } else {
+      dispatch(
+        createMeasure({
+          measurement_id: measurementId,
+          data,
+        })
+      );
+      resetForm();
+    }
   };
 
   return (
-    <div>
-      <Header title="Add Measurement" />
+    <>
+      <Header title={appBarTitle} link="/track" />
       <div className="add-measure">
-        <div className="container">
-          <div className="select-wrapper">
-            <select
-              name="select-measurements"
-              id="select-measurements"
-              onChange={handleSelectChange}
-            >
-              {measurements.map((measurement) => (
-                <option key={measurement.id} value={measurement.id}>
-                  {measurement.name}
-                </option>
-              ))}
-            </select>
-            <input
-              id="measurement-input"
-              type="number"
-              step="0.01"
-              min="0"
-              placeholder="0.01 cm"
-              onChange={handleInputChange}
-            />
-          </div>
-          <button
-            className="AddMeasure__btn"
-            type="submit"
-            onClick={handleClick}
-          >
-            Add Measure
-          </button>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <Select
+            className="react-select"
+            classNamePrefix="react-select"
+            options={measurementsArray.map((m) => ({
+              label: m.measurement_name,
+              value: m.id,
+            }))}
+            onChange={(e) => setMeasurementId(e.value)}
+            placeholder={
+              <div className={selectPlaceholderClass}>
+                {selectPlaceholderText}
+              </div>
+            }
+          />
+
+          <input
+            type="number"
+            step="0.01"
+            placeholder="Your measure in cm"
+            value={data}
+            onChange={(e) => setData(e.target.value)}
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
       </div>
-    </div>
+    </>
   );
 };
 
