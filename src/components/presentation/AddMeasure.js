@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../container/Header';
 import '../../styles/AddMeasure.css';
+// import T_HEADER from '../../helper/tHeader';
 
 const AddMeasure = () => {
   const history = useHistory();
@@ -40,7 +41,10 @@ const AddMeasure = () => {
       },
     };
     axios
-      .post('https://guarded-sands-43543.herokuapp.com/measurements', payload)
+      .post(
+        'https://guarded-sands-43543.herokuapp.com/measurements/',
+        payload
+      )
       .then((response) => {
         console.log(response);
         document.getElementById('measurement-input').value = '';

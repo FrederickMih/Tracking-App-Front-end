@@ -16,7 +16,7 @@ const LogoutUser = () => {
     <div className="logout">
       <h1>
         Hi....
-        <span className="welcome__user">{user.username.toUpperCase()}</span>
+        <span className="welcome__user">{user.username}</span>
       </h1>
       <button
         type="submit"

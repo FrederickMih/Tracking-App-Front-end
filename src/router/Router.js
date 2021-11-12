@@ -6,8 +6,6 @@ import MorePage from '../components/container/MorePage';
 import AddMeasure from '../components/presentation/AddMeasure';
 import Measurements from '../components/container/Measurements';
 import Progress from '../components/container/Progress';
-import LogInUser from '../components/presentation/LogInForm';
-import SignUpForm from '../components/presentation/SignUpForm';
 
 const Router = () => (
   <>
@@ -16,8 +14,6 @@ const Router = () => (
       <Route exact path="/add" component={AddMeasure} />
       <Route exact path="/more" component={MorePage} />
       <Route exact path="/track" component={Measurements} />
-      <Route exact path="/login" component={LogInUser} />
-      <Route exact path="/signup" component={SignUpForm} />
       <Route exact path="/progress/:measurementId" component={Progress} />
     </Switch>
     <Navigator />

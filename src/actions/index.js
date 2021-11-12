@@ -1,19 +1,26 @@
 import axios from 'axios';
+// import T_HEADER from '../helper/tHeader';
 import {
-  LOGIN, LOGOUT, GET_MEASUREMENTS, SET_USER_DATA
+  LOGIN,
+  LOGOUT,
+  GET_MEASUREMENTS,
+  SET_USER_DATA,
+  BASE,
 } from './constants';
 
 const getMeasurements = () => async (dispatch) => {
-  axios.get('https://guarded-sands-43543.herokuapp.com/measurements').then(
-    // (response) => console.log(response.data)
-    (response) => dispatch({
+  const url = `${BASE}measurements`;
+  axios.get(url).then((response) => {
+    dispatch({
       type: GET_MEASUREMENTS,
       payload: {
         measurements: [...response.data],
       },
-    })
-  );
+    });
+    console.log(response.data);
+  });
 };
+// (response) => console.log(response.data);
 
 const loginAction = (username, email) => async (dispatch) => {
   dispatch({
