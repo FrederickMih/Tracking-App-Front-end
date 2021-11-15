@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { createSelector } from 'reselect';
 import { apiCallBegan } from '../api';
 
+/* eslint-disable */
 const measurementSlice = createSlice({
   name: 'measurement',
   initialState: {
@@ -22,20 +23,21 @@ const measurementSlice = createSlice({
   },
 });
 
-const { measurementRequested, measurementsReceived, measurementRequestFailed } =
-  measurementSlice.actions;
+/* eslint-enable */
+/* eslint-disable */
+const { measurementRequested, measurementsReceived, measurementRequestFailed } = measurementSlice.actions;
 export default measurementSlice.reducer;
+/* eslint-enable */
 
 // ACTION CREATOR
 
-export const loadMeasurements = () =>
-  apiCallBegan({
-    url: '/measurements',
-    withCredentials: true,
-    onStart: measurementRequested.type,
-    onSuccess: measurementsReceived.type,
-    onError: measurementRequestFailed.type,
-  });
+export const loadMeasurements = () => apiCallBegan({
+  url: '/measurements',
+  withCredentials: true,
+  onStart: measurementRequested.type,
+  onSuccess: measurementsReceived.type,
+  onError: measurementRequestFailed.type,
+});
 
 // SELECTOR
 

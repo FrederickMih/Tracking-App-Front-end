@@ -29,31 +29,30 @@ const measureSlice = createSlice({
 });
 /* eslint-enable */
 
-const { measureRequested, measureCreated, measureReceived, measureRequestFailed } =
-  measureSlice.actions;
+const {
+  measureRequested, measureCreated, measureReceived, measureRequestFailed
+} = measureSlice.actions;
 export default measureSlice.reducer;
 
 // ACTION CREATOR
 
-export const createMeasure = (measureInfo) =>
-  apiCallBegan({
-    url: `/measurements/${measureInfo.measurement_id}/measures`,
-    method: 'post',
-    data: measureInfo,
-    withCredentials: true,
-    onStart: measureRequested.type,
-    onSuccess: measureCreated.type,
-    onError: measureRequestFailed.type,
-  });
+export const createMeasure = (measureInfo) => apiCallBegan({
+  url: `/measurements/${measureInfo.measurement_id}/measures`,
+  method: 'post',
+  data: measureInfo,
+  withCredentials: true,
+  onStart: measureRequested.type,
+  onSuccess: measureCreated.type,
+  onError: measureRequestFailed.type,
+});
 
-export const loadMeasures = () =>
-  apiCallBegan({
-    url: '/measures',
-    withCredentials: true,
-    onStart: measureRequested.type,
-    onSuccess: measureReceived.type,
-    onError: measureRequestFailed.type,
-  });
+export const loadMeasures = () => apiCallBegan({
+  url: '/measures',
+  withCredentials: true,
+  onStart: measureRequested.type,
+  onSuccess: measureReceived.type,
+  onError: measureRequestFailed.type,
+});
 
 // SELECTOR
 

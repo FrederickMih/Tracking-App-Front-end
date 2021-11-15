@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import Header from '../../container/Header';
+// import Header from '../../container/Header';
 import '../../../styles/auth.css';
 import {
   getUserInfo,
@@ -47,7 +47,7 @@ const Registration = () => {
 
   return (
     <>
-      <Header title="Sign up" link="/" />
+      {/* <Header title="Sign up" link="/" /> */}
       <div className="auth">
         <div className="auth-sub">
           <p>Already have an account?</p>
@@ -56,7 +56,8 @@ const Registration = () => {
         <div
           className={`error-message ${
             !userLoading && userInfo.status === 'Error' ? 'show' : 'hide'
-          }`}>
+          }`}
+        >
           Sign Up Failed: Username unavailable or password mismatch
         </div>
         <form onSubmit={handleSubmit} id="form">

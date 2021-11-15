@@ -52,7 +52,8 @@ const Login = () => {
         <div
           className={`error-message ${
             !userLoading && userInfo.status === 'Error' ? 'show' : 'hide'
-          }`}>
+          }`}
+        >
           Sign In Failed: Invalid username or password
         </div>
         <form onSubmit={handleSubmit}>

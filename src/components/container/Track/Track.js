@@ -36,7 +36,9 @@ const Track = () => {
               <div className="track-tile-left">
                 <div className="date">{m[0]}</div>
                 <div className="count">
-                  Policy Count: <span>{m[1].length}</span>
+                  Policy Count:
+                  {' '}
+                  <span>{m[1].length}</span>
                 </div>
               </div>
               <div className="track-tile-right">

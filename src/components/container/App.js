@@ -1,37 +1,33 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { getMeasurements } from '../../actions';
-import Router from '../../router/Router';
-// import Header from './Header';
-import LogInUser from '../presentation/LoginUser';
-import '../../styles/App.css';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Navigator from './Navigator';
+import Registration from '../presentation/auth/Registration';
+import Login from '../presentation/auth/Login';
+import MorePage from './MorePage';
+import AddMeasure from '../presentation/AddMeasure';
+import Track from './Track/Track';
+import Progress from './Progress';
+import TrackDetails from './Track/TrackDetail';
+import HomePage from '../presentation/HomePage';
 
-const App = () => {
-  // Fetch measurements data
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getMeasurements());
-  }, [dispatch]);
-
-  // Load user data from state
-  const user = useSelector((state) => state.user);
-
-  let app = <LogInUser />;
-  if (user.loggedIn) {
-    app = (
-      <>
-        <Router />
-      </>
-    );
-  }
-
+function App() {
   return (
-    <BrowserRouter>
-      <div className="App">{app}</div>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/registration" component={Registration} />
+          <Route exact path="/more" component={MorePage} />
+          <Route exact path="/add" component={AddMeasure} />
+          <Route exact path="/track" component={Track} />
+          <Route exact path="/track_details" component={TrackDetails} />
+          <Route exact path="/progress" component={Progress} />
+          <Route exact path="/home" component={HomePage} />
+        </Switch>
+        <Navigator />
+      </BrowserRouter>
+    </>
   );
-};
+}
 
 export default App;

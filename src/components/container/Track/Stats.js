@@ -6,7 +6,7 @@ import { getTotalData } from '../../../Redux/slicers/measure';
 import '../../../styles/Stats.css';
 
 const Stats = ({ today }) => {
-    // load data from state
+  // load data from state
   const totalData = useSelector(getTotalData);
 
   return (

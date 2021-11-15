@@ -8,8 +8,8 @@ import {
   getTotalData,
   loadMeasures,
 } from '../../Redux/slicers/measure';
-import ProgressCircle from '../utility/ProgressCircle';
-import { TARGET } from '../../useful-info/constants'
+import ProgressCircle from './ProgressCircle';
+import { TARGET } from '../../useful-info/constants';
 import '../../styles/Progress.css';
 
 const Progress = () => {
@@ -49,10 +49,14 @@ const Progress = () => {
           <div key={p[0]} className="progress-item">
             <div className="ins-type">{p[0]}</div>
             <div className="ins-premium">
-              &#8377; {p[1].map((e) => e.premium).reduce((a, b) => a + b)}
+              &#8377;
+              {' '}
+              {p[1].map((e) => e.premium).reduce((a, b) => a + b)}
             </div>
             <div className="ins-count">
-              Quantity: <span>{p[1].length}</span>
+              Quantity:
+              {' '}
+              <span>{p[1].length}</span>
             </div>
           </div>
         ))}

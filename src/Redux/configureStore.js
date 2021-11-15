@@ -1,12 +1,10 @@
-import { ConfigureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import reducer from './rootReducer';
 import api from './middleware/api';
 
-const configureAppStore = () => {
+export default function configureAppStore() {
   return configureStore({
     reducer,
     middleware: [api],
   });
-};
-
-export default configureAppStore;
+}

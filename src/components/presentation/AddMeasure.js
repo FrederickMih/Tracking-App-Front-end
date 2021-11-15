@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
 import { Redirect } from 'react-router-dom';
 import Header from '../container/Header';
-import { getMeasurements, loadMeasurements } from '../../Redux/slicers/measurement';
+import {
+  getMeasurements,
+  loadMeasurements,
+} from '../../Redux/slicers/measurement';
 import { createMeasure } from '../../Redux/slicers/measure';
 import '../../styles/AddMeasure.css';
 
@@ -11,14 +14,18 @@ const AddMeasure = () => {
   const appBarTitle = 'Add Measure';
   const dispatch = useDispatch();
   const measurementsObj = useSelector(getMeasurements);
-  const productsArray =
-    measurementsObj.measurements === undefined ? [] : measurementsObj.measurements;
-
+  /* eslint-disable */
+  const measurementsArray =
+    measurementsObj.measurements === undefined
+      ? []
+      : measurementsObj.measurements;
+  /* eslint-disable */
   const [measurementId, setMeasurementId] = useState(0);
   const [data, setData] = useState('');
 
-  const [selectPlaceholderText, setSelectPlaceholderText] =
-    useState('Select your measurement item');
+  const [selectPlaceholderText, setSelectPlaceholderText] = useState(
+    'Select your measurement item'
+  );
   const [selectPlaceholderClass, setSelectPlaceholderClass] = useState('');
 
   useEffect(async () => {
