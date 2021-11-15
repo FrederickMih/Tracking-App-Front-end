@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './style/AppBar.css';
+import '../../styles/BackArrow.css';
 import ArrowBackIosOutlinedIcon from '@material-ui/icons/ArrowBackIosOutlined';
 
 const AppBar = ({ title, link }) => (
   <>
-    <div className="appbar">
+    <div className="bkbar">
       <Link to={link}>
         <ArrowBackIosOutlinedIcon />
       </Link>
