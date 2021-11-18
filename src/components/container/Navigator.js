@@ -1,41 +1,30 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-// import PropTypes from 'prop-types';
-
-import addMeasureLogo from '../../assets/images/add-measure-logo.png';
-import trackLogo from '../../assets/images/track-logo.png';
-import progressLogo from '../../assets/images/progress-logo.png';
-import moreLogo from '../../assets/images/more.png';
+import { Link } from 'react-router-dom';
+import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
+import TrendingUpOutlinedIcon from '@material-ui/icons/TrendingUpOutlined';
+import TrackChangesOutlinedIcon from '@material-ui/icons/TrackChangesOutlined';
+import PersonOutlinedIcon from '@material-ui/icons/PersonOutlined';
 import '../../styles/Navigator.css';
 
 const Navigator = () => (
   <>
-    <div className="links">
-      <NavLink
-        to="/measurement"
-        exact
-        className="link"
-        activeClassName="activeLink"
-      >
-        <img
-          src={addMeasureLogo}
-          className="linkImage"
-          alt="add Measure logo"
-        />
-        <span className="linkTitle">Add Measure</span>
-      </NavLink>
-      <NavLink to="/track" className="link" activeClassName="activeLink">
-        <img src={trackLogo} className="linkImage" alt="add Measure logo" />
-        <span className="linkTitle">Track.it</span>
-      </NavLink>
-      <NavLink to="/progress/1" className="link" activeClassName="activeLink">
-        <img src={progressLogo} className="linkImage" alt="add Measure logo" />
-        <span className="linkTitle">Progress</span>
-      </NavLink>
-      <NavLink to="/more" className="link" activeClassName="activeLink">
-        <img src={moreLogo} className="linkImage" alt="add Measure logo" />
-        <span className="linkTitle">More</span>
-      </NavLink>
+    <div className="navbar">
+      <Link to="/add">
+        <AddOutlinedIcon />
+        <div>Add Measure</div>
+      </Link>
+      <Link to="/track">
+        <TrendingUpOutlinedIcon />
+        <div>Track</div>
+      </Link>
+      <Link to="/progress">
+        <TrackChangesOutlinedIcon />
+        <div>Progress</div>
+      </Link>
+      <Link to="/more">
+        <PersonOutlinedIcon />
+        <div>Profile</div>
+      </Link>
     </div>
   </>
 );

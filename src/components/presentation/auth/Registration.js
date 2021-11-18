@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import LinearProgress from '@material-ui/core/LinearProgress';
-// import Header from '../../container/Header';
 import '../../../styles/auth.css';
 import {
   getUserInfo,
@@ -47,11 +46,10 @@ const Registration = () => {
 
   return (
     <>
-      {/* <Header title="Sign up" link="/" /> */}
       <div className="auth">
         <div className="auth-sub">
           <p>Already have an account?</p>
-          <Link to="/">Sign In</Link>
+          <Link to="/">Login</Link>
         </div>
         <div
           className={`error-message ${

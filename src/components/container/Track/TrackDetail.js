@@ -25,7 +25,7 @@ const TrackDetails = ({ location }) => {
   }, []);
 
   if (measurementsObj.status === 401) {
-    return <Redirect to="/home" />;
+    return <Redirect to="/" />;
   }
   return (
     <>
@@ -47,9 +47,9 @@ const TrackDetails = ({ location }) => {
                     : ''}
                 </div>
                 <div className="data">
-                  <span>&#8377;</span>
-                  {' '}
                   {e.data}
+                  {' '}
+                  <span>CM</span>
                 </div>
               </div>
             ))}

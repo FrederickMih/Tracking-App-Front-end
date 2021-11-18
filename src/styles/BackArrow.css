@@ -5,15 +5,7 @@
   justify-content: center;
   position: fixed;
   top: 0;
-  right: 0;
   left: 0;
-  z-index: 10;
-}
-
-.bkbar .title {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #eee;
 }
 
 .bkbar a {

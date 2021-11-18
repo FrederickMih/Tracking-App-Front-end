@@ -1,5 +1,3 @@
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import Header from './Header';
 import target from '../../assets/images/target.png';
 import email from '../../assets/images/email.png';
@@ -8,17 +6,16 @@ import settings from '../../assets/images/settings.png';
 import help from '../../assets/images/help.png';
 import { container } from '../../styles/allPages.module.css';
 import { user, info, link } from '../../styles/MorePage.module.css';
+import Profile from './Profile';
 
-const MorePage = ({ userData }) => (
+const MorePage = () => (
   <div>
     <Header title="More" />
+    <Profile />
     <div className={container}>
       <div className={user}>
         <img alt="Img" src={man} />
-        <div className={info}>
-          <div>{userData.username}</div>
-          <div>{userData.email}</div>
-        </div>
+        <div className={info} />
       </div>
       <div className={link}>
         <img alt="target" src={target} />
@@ -44,14 +41,4 @@ const MorePage = ({ userData }) => (
   </div>
 );
 
-MorePage.propTypes = {
-  userData: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-  ).isRequired,
-};
-
-const mapStateToProps = ({ userData }) => ({
-  userData,
-});
-
-export default connect(mapStateToProps)(MorePage);
+export default MorePage;

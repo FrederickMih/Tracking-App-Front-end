@@ -9,7 +9,7 @@
 
 .add-measure form > * + * {
   margin: 1em auto;
-  width: 90%;
+  width: 70%;
 }
 
 .red-text {

@@ -1,13 +1,13 @@
 .auth {
-  padding: 2em;
-  margin-top: 3em;
-  height: calc(100vh - 3em);
+  padding: 2rem;
+  margin-top: 3rem;
+  height: calc(100vh - 3rem);
 }
 
 .error-message {
   font-size: 0.8rem;
-  margin-top: 3em;
-  border-radius: 2em;
+  margin-top: 3rem;
+  border-radius: 2rem;
   text-align: center;
 }
 
@@ -22,14 +22,12 @@
 form {
   display: flex;
   flex-direction: column;
-  margin-top: 0.5em;
 }
 
 form > * {
-  margin-bottom: 1em;
-  padding: 0.5em;
+  margin-bottom: 1rem;
+  padding: 0.6em;
   font-size: 1.1rem;
-  border: 1px solid #ccc;
 }
 
 form > *:focus {
@@ -44,21 +42,21 @@ form > button {
 }
 
 .auth form > button {
-  padding: 1.2em;
+  padding: 1.9rem;
   position: fixed;
   left: 0;
   right: 0;
-  bottom: -1em;
+  bottom: -1rem;
   width: 100%;
-  z-index: 10;
+  z-index: 15;
 }
 
 form > button:hover {
-  background-color: #1f6d1d;
+  background-color: #07b6d4;
 }
 
 .auth-sub {
-  margin-top: 2em;
+  margin-top: 2rem;
   text-align: center;
 }
 

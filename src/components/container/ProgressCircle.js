@@ -6,11 +6,17 @@ import Box from '@material-ui/core/Box';
 
 const ProgressCircle = ({ value, color }) => (
   <Box position="relative" display="inline-flex">
-    <CircularProgress variant="determinate" value={value} color={color} />
+    <CircularProgress
+      variant="determinate"
+      value={value}
+      color={color}
+      size={80}
+      thickness={7}
+    />
     <Box
-      top={0}
+      top={10}
       left={0}
-      bottom={0}
+      bottom={10}
       right={0}
       position="absolute"
       display="flex"
@@ -18,7 +24,7 @@ const ProgressCircle = ({ value, color }) => (
       justifyContent="center"
     >
       <Typography variant="caption" component="div" color="textSecondary">
-        {`${Math.round(value)}%`}
+        {`${Math.round(value + 5000)}%`}
       </Typography>
     </Box>
   </Box>

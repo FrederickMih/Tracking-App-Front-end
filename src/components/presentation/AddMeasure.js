@@ -33,7 +33,7 @@ const AddMeasure = () => {
   }, []);
 
   if (measurementsObj.status === 401) {
-    return <Redirect to="/home" />;
+    return <Redirect to="/" />;
   }
 
   const resetForm = () => {
@@ -44,7 +44,7 @@ const AddMeasure = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (measurementId === 0) {
-      setSelectPlaceholderText('Please select a Product');
+      setSelectPlaceholderText('Please select a an item');
       setSelectPlaceholderClass('red-text');
     } else {
       dispatch(
@@ -80,7 +80,7 @@ const AddMeasure = () => {
           <input
             type="number"
             step="0.01"
-            placeholder="Your measure in cm"
+            placeholder="Data in cm"
             value={data}
             onChange={(e) => setData(e.target.value)}
             required

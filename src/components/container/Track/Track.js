@@ -9,6 +9,7 @@ import {
   loadMeasures,
 } from '../../../Redux/slicers/measure';
 import '../../../styles/Track.css';
+import Profile from '../Profile';
 
 const Track = () => {
   const title = 'Measure Tracked';
@@ -21,37 +22,39 @@ const Track = () => {
   }, []);
 
   if (measures.status === 401) {
-    return <Redirect to="/home" />;
+    return <Redirect to="/" />;
   }
 
   return (
-    <div className="track">
+    <div>
       <Header title={title} />
-      {Object.entries(allMeasures).length === 0 ? (
-        <div className="not-found">No data found. Please Add deal first</div>
-      ) : (
-        Object.entries(allMeasures).map((m) => (
-          <div key={m[0]} className="track-tile">
-            <Link to={{ pathname: '/track_details', info: m[1], date: m[0] }}>
-              <div className="track-tile-left">
-                <div className="date">{m[0]}</div>
-                <div className="count">
-                  Policy Count:
-                  {' '}
-                  <span>{m[1].length}</span>
-                </div>
-              </div>
-              <div className="track-tile-right">
-                <span>&#8377;</span>
-                <span>
-                  {m[1].map((e) => e.data).reduce((a, b) => a + b)}
-                </span>
-                <NavigateNextIcon />
-              </div>
-            </Link>
+      <div className="track">
+        <Profile />
+        {Object.entries(allMeasures).length === 0 ? (
+          <div className="not-found">
+            No data found. Please Add Measure first
           </div>
-        ))
-      )}
+        ) : (
+          Object.entries(allMeasures).map((m) => (
+            <div key={m[0]} className="track-tile">
+              <Link to={{ pathname: '/track_details', info: m[1], date: m[0] }}>
+                <div className="track-tile-left">
+                  <div className="date">{m[0]}</div>
+                  <div className="count">
+                    Measured Parts:
+                    {' '}
+                    <span>{m[1].length}</span>
+                  </div>
+                </div>
+                <div className="track-tile-right">
+                  <span>Details</span>
+                  <NavigateNextIcon />
+                </div>
+              </Link>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 };

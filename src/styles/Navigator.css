@@ -1,34 +1,33 @@
-.link {
-  width: 25vw;
-  height: 60px;
-  background-color: #313944;
-  color: white;
+.navbar {
+  background-color: var(--accent-secondary);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar > * {
+  width: 100%;
+  height: 100%;
+  padding: 0.6em;
+  transition: all linear 300ms;
+}
+
+.navbar > *:hover {
+  background-color: var(--accent-primary);
+}
+
+.navbar a {
+  color: #eee;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2px;
 }
 
-.linkImage {
-  width: 35px;
-  height: 30px;
-  padding-bottom: 3px;
-  object-fit: cover;
-}
-
-.linkTitle {
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.links {
-  display: flex;
-  position: fixed;
-  bottom: 0;
-}
-
-.activeLink {
-  background-color: #41b5e8;
+.navbar a div {
+  font-size: 0.8rem;
+  padding: 0.2em;
 }
