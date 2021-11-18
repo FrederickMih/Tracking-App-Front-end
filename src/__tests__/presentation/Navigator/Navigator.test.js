@@ -2,18 +2,18 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import AddMeasure from '../../components/presentation/AddMeasure';
-import configureAppStore from '../../Redux/configureStore';
+import configureAppStore from '../../../Redux/configureStore';
+import Navigator from '../../../components/container/Navigator';
 
 const store = configureAppStore();
 
-describe('AddMeasure', () => {
-  test('should match the snapshot of AddMeasure component', () => {
+describe('Navbar', () => {
+  it('should match the snapshot of Navbar Navigator', () => {
     const tree = renderer
       .create(
         <Provider store={store}>
           <BrowserRouter>
-            <AddMeasure />
+            <Navigator />
           </BrowserRouter>
         </Provider>
       )
