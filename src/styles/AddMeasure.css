@@ -4,7 +4,7 @@
 }
 
 .react-select .react-select__control {
-  border: none;
+  border: thin;
 }
 
 .add-measure form > * + * {

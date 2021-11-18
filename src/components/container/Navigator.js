@@ -11,7 +11,7 @@ const Navigator = () => (
     <div className="navbar">
       <Link to="/add">
         <AddOutlinedIcon />
-        <div>Add Measure</div>
+        <div>Measure</div>
       </Link>
       <Link to="/track">
         <TrendingUpOutlinedIcon />
