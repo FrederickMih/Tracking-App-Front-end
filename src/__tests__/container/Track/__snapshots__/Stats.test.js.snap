@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stats should match the snapshot of Stats component 1`] = `
+<div
+  className="stats"
+>
+  <div
+    className="stats-item"
+  >
+    <div>
+      Total Measured
+    </div>
+    <div>
+      300
+       
+      cm
+    </div>
+  </div>
+</div>
+`;
