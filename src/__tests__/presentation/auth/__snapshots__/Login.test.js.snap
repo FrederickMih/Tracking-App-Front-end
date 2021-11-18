@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should match the snapshot of Login component 1`] = `
+<div
+  className="auth"
+>
+  <div
+    className="auth-sub"
+  >
+    <p>
+      Are you a new user?
+    </p>
+    <a
+      href="/registration"
+      onClick={[Function]}
+    >
+      Register
+    </a>
+  </div>
+  <div
+    className="error-message hide"
+  >
+    Sign In Failed: Invalid username or password
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Username"
+      required={true}
+      type="text"
+      value=""
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Password"
+      required={true}
+      type="password"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</div>
+`;
