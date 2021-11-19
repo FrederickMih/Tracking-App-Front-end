@@ -1,29 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
-import TrendingUpOutlinedIcon from '@material-ui/icons/TrendingUpOutlined';
-import TrackChangesOutlinedIcon from '@material-ui/icons/TrackChangesOutlined';
-import PersonOutlinedIcon from '@material-ui/icons/PersonOutlined';
 import '../../styles/Navigator.css';
+import addMeasureLogo from '../../assets/images/add-measure-logo.png';
+import trackLogo from '../../assets/images/track-logo.png';
+import progressLogo from '../../assets/images/progress-logo.png';
+import moreLogo from '../../assets/images/more.png';
 
 const Navigator = () => (
   <>
     <div className="navbar">
       <Link to="/add">
-        <AddOutlinedIcon />
+        <img
+          src={addMeasureLogo}
+          className="linkImage"
+          alt="add Measure logo"
+        />
         <div>Measure</div>
       </Link>
       <Link to="/track">
-        <TrendingUpOutlinedIcon />
+        <img src={trackLogo} className="linkImage" alt="add Measure logo" />
         <div>Track</div>
       </Link>
       <Link to="/progress">
-        <TrackChangesOutlinedIcon />
+        <img
+          src={progressLogo}
+          className="linkImage"
+          alt="add Measure logo"
+        />
         <div>Progress</div>
       </Link>
       <Link to="/more">
-        <PersonOutlinedIcon />
-        <div>Profile</div>
+        <img
+          src={moreLogo}
+          className="linkImage"
+          alt="add Measure logo"
+        />
+        <div>More</div>
       </Link>
     </div>
   </>

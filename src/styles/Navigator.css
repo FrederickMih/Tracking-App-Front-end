@@ -31,3 +31,10 @@
   font-size: 0.8rem;
   padding: 0.2em;
 }
+
+.linkImage {
+  width: 35px;
+  height: 30px;
+  padding-bottom: 3px;
+  object-fit: cover;
+}
