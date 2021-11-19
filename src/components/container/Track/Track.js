@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import Pluralize from 'react-pluralize';
 import Header from '../Header';
 import {
   getAllMeasures,
@@ -41,9 +42,10 @@ const Track = () => {
                 <div className="track-tile-left">
                   <div className="date">{m[0]}</div>
                   <div className="count">
-                    Measured Parts:
+                    Measured &nbsp;
+                    <Pluralize singular="Part" count={m[1].length} />
                     {' '}
-                    <span>{m[1].length}</span>
+                    {/* <span>{m[1].length}</span> */}
                   </div>
                 </div>
                 <div className="track-tile-right">

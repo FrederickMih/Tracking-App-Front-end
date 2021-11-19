@@ -145,8 +145,8 @@ describe('measureSlice', () => {
   describe('selectors', () => {
     const createState = () => ({
       measure: {
-          measures: {},
-          newMeasure: [],
+        measures: {},
+        newMeasure: [],
         loading: false,
       },
     });

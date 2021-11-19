@@ -5,7 +5,7 @@ import '../../../styles/Stats.css';
 const Stats = ({ today }) => (
   <div className="stats">
     <div className="stats-item">
-      <div>Total Measured</div>
+      <div>Total</div>
       <div>
         {today}
         {' '}

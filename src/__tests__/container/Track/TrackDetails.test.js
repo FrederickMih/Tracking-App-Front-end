@@ -23,4 +23,3 @@ describe('TrackDetails', () => {
     expect(tree).toMatchSnapshot();
   });
 });
-

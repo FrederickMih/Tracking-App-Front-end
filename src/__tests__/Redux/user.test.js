@@ -5,9 +5,8 @@ import {
   registerUser,
   loginUser,
   logoutUser,
-  getUserInfo,
   getUserLoadingStatus,
-} from '../../Redux/slicers/user'
+} from '../../Redux/slicers/user';
 
 describe('Login an existing user', () => {
   let mockAxios;
