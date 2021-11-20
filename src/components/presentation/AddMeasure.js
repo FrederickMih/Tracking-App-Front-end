@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import Header from '../container/Header';
 import {
   getMeasurements,
@@ -13,6 +13,7 @@ import '../../styles/AddMeasure.css';
 const AddMeasure = () => {
   const appBarTitle = 'Add Measure';
   const dispatch = useDispatch();
+  const history = useHistory();
   const measurementsObj = useSelector(getMeasurements);
   /* eslint-disable */
   const measurementsArray =
@@ -41,6 +42,11 @@ const AddMeasure = () => {
     setData('');
   };
 
+  //  const handleSubmitBtn = (e) => {
+  //    e.preventDefault();
+  //    history.push('/progress');
+  //  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (measurementId === 0) {
@@ -55,6 +61,7 @@ const AddMeasure = () => {
       );
       resetForm();
     }
+    history.push('/track');
   };
 
   return (
