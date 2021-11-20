@@ -42,11 +42,6 @@ const AddMeasure = () => {
     setData('');
   };
 
-  //  const handleSubmitBtn = (e) => {
-  //    e.preventDefault();
-  //    history.push('/progress');
-  //  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (measurementId === 0) {
@@ -59,9 +54,9 @@ const AddMeasure = () => {
           data,
         })
       );
+      history.push('/track');
       resetForm();
     }
-    history.push('/track');
   };
 
   return (
