@@ -14,18 +14,19 @@
   object-fit: cover;
 }
 
-.info div:first-child {
+.info h2:first-child {
   color: #18506b;
   font-size: 25px;
   text-transform: capitalize;
   line-height: 1;
   font-weight: bold;
+  margin-left: 2rem;
 }
 
-.info div:last-child {
+/* .info h2:last-child {
   color: #41b5e8;
   font-size: 14px;
-}
+} */
 
 .link {
   display: flex;
