@@ -2,12 +2,12 @@
 
 ## Project Description
 
-This is a web application designed to track measurements of body parts(Biceps, Thighs, Hip, and Waist) from an API, built with Rails. . It fetches data such as measurements from the back-end API and equally allows users to post new measurements data.
+This is a web application designed to track measurements of body parts(Biceps, Thighs, Hip, and Waist) from an API, built with Rails. . It fetches data such as measurements from the back-end API and equally allows users to post new measures data.
 Here is the back-end repository ([API Repo](https://github.com/FrederickMih/Tracking-app-api))
 
 ## Screenshots
 
-<span style="display: block; text-align: center;">![screenshots](src/assets/Screenshot1.png) ![](src/assets/Screenshot2.png)
+<span style="display: block; text-align: center;">![](src/assets/Screenshot.png) ![](src/assets/Screenshot0.png) ![](src/assets/Screenshot1.png) ![](src/assets/Screenshot3.png) ![](src/assets/Screenshot5.png) ![](src/assets/Screenshot6.png) ![](src/assets/Screenshot7.png)
 </span>
 
 ### Features
@@ -15,7 +15,7 @@ Here is the back-end repository ([API Repo](https://github.com/FrederickMih/Trac
 - Login with username
 - Responsive design that works for Mobile, Tablet and Desktop
 - Track measurement data such for Left and Right Biceps, Left and Right Thighs, Hip and Waist
-- Post new measurement data
+- Post new measures data
 
 ### Built with
 
