@@ -5,7 +5,9 @@
   right: 20px;
   background-color: red;
   border: none;
+
   /* top: 0; */
+
   /* position: sticky; */
   top: 80px;
   z-index: 100;
@@ -29,6 +31,7 @@
   display: inline-block;
   text-transform: lowercase;
 }
-.profile-cap:first-letter {
+
+.profile-cap::first-letter {
   text-transform: uppercase;
 }
