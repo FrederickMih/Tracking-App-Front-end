@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile should match the snapshot of Profile component 1`] = `
+Array [
+  <div
+    className="profile-top"
+  >
+    <h2>
+      Hi  
+      <span
+        className="profile-cap"
+      >
+         
+      </span>
+    </h2>
+  </div>,
+  <button
+    className="logout-button"
+    onClick={[Function]}
+    type="button"
+  >
+    <img
+      alt="logout"
+      className="logoutBtn__color"
+      src="logout.png"
+    />
+  </button>,
+]
+`;

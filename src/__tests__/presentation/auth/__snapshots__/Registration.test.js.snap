@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Registration should match the snapshot of Registration component 1`] = `
+<div
+  className="auth"
+>
+  <div
+    className="auth-sub"
+  >
+    <p>
+      Already have an account?
+    </p>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      Login
+    </a>
+  </div>
+  <div
+    className="error-message hide"
+  >
+    Sign Up Failed: Username unavailable or password mismatch
+  </div>
+  <form
+    id="form"
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Username (4-8 character)"
+      required={true}
+      type="text"
+      value=""
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Password"
+      required={true}
+      type="password"
+      value=""
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Password Confirmation"
+      required={true}
+      type="password"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </form>
+</div>
+`;

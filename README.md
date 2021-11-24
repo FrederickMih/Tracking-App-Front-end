@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Tracking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+This is a web application designed to track measurements of body parts(Biceps, Thighs, Hip, and Waist) from an API, built with Rails. . It fetches data such as measurements from the back-end API and equally allows users to post new measures data.
+Here is the back-end repository ([API Repo](https://github.com/FrederickMih/Tracking-app-api))
 
-In the project directory, you can run:
+## Screenshots
 
-### `yarn start`
+<span style="display: block; text-align: center;">![](src/assets/Screenshot.png) ![](src/assets/Screenshot0.png) ![](src/assets/Screenshot1.png) ![](src/assets/Screenshot3.png) ![](src/assets/Screenshot5.png) ![](src/assets/Screenshot6.png) ![](src/assets/Screenshot7.png)
+</span>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Login with username
+- Responsive design that works for Mobile, Tablet and Desktop
+- Track measurement data such for Left and Right Biceps, Left and Right Thighs, Hip and Waist
+- Post new measures data
 
-### `yarn test`
+### Built with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ReactJS
+- ReactDOM
+- React-Create-App
+- Redux
+- npm
+- CSS
+- ES6
+- Ruby on Rails for Backend API ([API Repo](https://github.com/FrederickMih/Tracking-app-api))
 
-### `yarn build`
+## Live Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Try it out here](https://fred-tracking-app.herokuapp.com/measurement)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Set up this project locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Open the terminal in the folder where you want to install the app;
+- Run `https://github.com/FrederickMih/Tracking-App-Front-end` to clone the project;
+- Switch to the main directory of project using cd;
+- Run `npm install` in your terminal to install all dependencies (you will need Node.js installed on your machine);
+- Run `npm start`;
 
-### `yarn eject`
+# Testing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Please run test using the command:
+- `npm test`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤 **Mih Frederick**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/FrederickMih)
+[![](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/frederick-mih/)
+[![](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/MihFrederick)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🤝 Contributing
 
-## Learn More
+Contributions, issues, and feature requests are welcome!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you want to contribute, you can clone this project or fork it.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you found an issue, feel free to check the [issues page](https://github.com/FrederickMih/Tracking-App-Front-end/issues).
 
-### Code Splitting
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Give a ⭐️ if you like this project!
 
-### Analyzing the Bundle Size
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Microverse](https://www.microverse.org/)
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT License

@@ -1,0 +1,15 @@
+.bkbar {
+  background-color: var(--accent-primary);
+  display: flex;
+  padding: 1.2em 1em 0.6em;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.bkbar a {
+  color: #eee;
+  position: absolute;
+  left: 0.8em;
+}
